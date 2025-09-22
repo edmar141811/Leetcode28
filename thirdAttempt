@@ -1,0 +1,54 @@
+/*
+Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+Runtime 0 ms
+Beats 100.00%
+Memory 8.44 MB
+Beats 95.66%
+
+I think the runtime might be a little off since it seems like it should be slower
+, but the memory seems right and is probably ok but there should be a faster way to find needle will try later
+
+*/
+
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+    //main area of declaring and initializing variables
+        int i =0;
+        int j=0;
+        int temp=0;
+        bool breaker = 0;
+        //first loop to go through all of the haystack, and if breaker is found, then leave
+        while(i < haystack.length()&& breaker==0){
+            //if the first letter of needle is found, check for the rest
+            if(haystack[i]==needle[0]){
+                temp=i;
+                //go through comparing haystack and needle
+                while(haystack[i]==needle[j]){
+                    if(needle.length()==j+1){
+                        breaker=1;
+                        break;
+                    }
+                    //either way, both i and j need to be pushed forward, even if not the same
+                    j++;
+                    i++;
+                }
+                //what to do if the needle is found completely
+                if(breaker==0){
+                    i=temp+1;
+                    temp=0;
+                    j=0;
+                }
+            }
+            //if letter of needle doesn't match current letter, continue
+            else{
+                i++;
+            }
+        }
+        //if no comparison is found, return not found
+        if(breaker==0){
+            return -1;
+        }
+        else return temp;
+    }
+};
