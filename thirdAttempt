@@ -1,12 +1,12 @@
 /*
-Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
 Runtime 0 ms
 Beats 100.00%
 Memory 8.44 MB
 Beats 95.66%
 
-I think the runtime might be a little off since it seems like it should be slower
-, but the memory seems right and is probably ok but there should be a faster way to find needle will try later
+Runtime might be a little off since it seems like it should be slower
+, but the memory is great, there should be an improvement in runtime to find the needle will try later
 
 */
 
